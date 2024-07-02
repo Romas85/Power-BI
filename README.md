@@ -6,7 +6,7 @@ This Power BI model provides an in-depth analysis of the construction sector acr
 ## Data Source: 
 Eurostat
 ## Visualizations:
-- ** Top 5 Countries by Labor Costs **: A bar chart showing the top 5 countries based on labor cost indices.
+- **Top 5 Countries by Labor Costs** : A bar chart showing the top 5 countries based on labor cost indices.
 - ** Labor Force Dynamics**: A line chart displaying the trend in labor costs and previous year's labor costs.
 - ** Construction Permits Dynamics: A line chart showing the trend in construction permits issued over quarters.
 - ** Country-wise Building Permits: A bar chart displaying the number of building permits issued by country.
