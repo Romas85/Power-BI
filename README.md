@@ -1,18 +1,22 @@
-Construction Sector Pulse Monitoring Model in Europe
-Description:
+## Construction Sector Pulse in Europe
+## Overview
+This Power BI model provides an in-depth analysis of the construction sector across Europe, utilizing data from Eurostat. It includes various visualizations to monitor key metrics such as labor costs, construction volumes, employment rates, and building permits.
 
-This Power BI data model is designed to monitor the pulse of the construction sector in Europe using Eurostat data. The model allows for the analysis of various economic indicators such as labor costs, wages, workload, and employment in the construction sector.
-
-Key Features:
-- Time Period Filtering: Ability to select quarters and years to observe changes in indicators over time.
-- Building Permits Type Filtering: Option to choose between residential and non-residential building permits.
-- Wage Dynamics: Visualization showing the changes in wages within the construction sector.
-- Workload Dynamics: Visualization depicting changes in workload.
-- Employment: Employment indicators in the construction sector.
-- Map: Interactive map allowing data filtering by EU and non-EU countries, as well as individual countries.
-
-Benefits:
-This model provides the ability to analyze each country's construction sector indicators and compare them with the EU average. Using this visualization, users can monitor the dynamics of labor costs, wages, workload, employment, and issued construction permits, enabling data-driven decision-making.
+## Model Structure
+## Data Source: Eurostat
+## Visualizations:
+Top 5 Countries by Labor Costs: A bar chart showing the top 5 countries based on labor cost indices.
+Labor Force Dynamics: A line chart displaying the trend in labor costs and previous year's labor costs.
+Construction Permits Dynamics: A line chart showing the trend in construction permits issued over quarters.
+Country-wise Building Permits: A bar chart displaying the number of building permits issued by country.
+Interactive Map: A map highlighting EU and non-EU countries with the ability to filter individual countries.
+DAX Features Demonstrated:
+Calculation of labor cost indices.
+Comparison of current and previous year's labor costs.
+Aggregation and trend analysis of building permits.
+Power BI Features Demonstrated
+Slicer for filtering by time period and building permit type.
+Dynamic comparison of country metrics with EU averages.
 ![image](https://github.com/Romas85/Power-BI/assets/161317970/c8547d4b-a1da-4c61-a7c5-fdf6ed2625c7)
 
 
