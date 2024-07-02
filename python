@@ -1,0 +1,111 @@
+import requests
+import csv
+import os
+import json
+from unidecode import unidecode
+from datetime import datetime
+
+def clean_text(text):
+    """
+    Remove unwanted characters and decode text to UTF-8.
+    """
+    if isinstance(text, list):
+        text = " ".join(text)
+    if isinstance(text, (int, float)):
+        return str(text)
+    return unidecode(str(text))
+
+# API užklausos parametrai
+url = "https://api.ted.europa.eu/v3/notices/search"
+headers = {
+    "Authorization": "Bearer ffd5f11a8d4a44229a0f9d51baad72cd",
+    "Content-Type": "application/json"
+}
+data = {
+    "query": "total-value>=1 AND classification-cpv IN (45231200, 45231112, 45232150, 45232152, 45232140, 50511000, 45255400, 45223720, 45223710, 45223720, 45259300, 50512000, 45223100, 45223210, 45262690, 71334000) AND publication-date>20240501",
+    "fields": [
+        "buyer-name",
+        "buyer-city",
+        "publication-number",
+        "notice-title",
+        "notice-type",
+        "total-value",
+        "publication-date",
+        "winner-name",
+        "classification-cpv"
+    ],
+    "page": 1,
+    "limit": 250,
+    "scope": "ALL"
+}
+
+# Siunčia užklausa
+response = requests.post(url, headers=headers, json=data)
+
+# Patikrina ar užklausa sėminga
+if response.status_code == 200:
+    results = response.json()
+    
+    # Write the full JSON response to a file
+    json_file_path = os.path.join(os.path.expanduser("~"), "Documents", "response.json")
+    with open(json_file_path, 'w', encoding='utf-8') as json_file:
+        json.dump(results, json_file, ensure_ascii=False, indent=4)
+    
+    # Create a timestamped CSV file path
+    timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
+    csv_file_path = os.path.join(os.path.expanduser("~"), "Documents", f"tenders_data_{timestamp}.csv")
+    
+    # Check if the directory exists, if not - create it
+    if not os.path.exists(os.path.dirname(csv_file_path)):
+        os.makedirs(os.path.dirname(csv_file_path))
+    
+    # Check if the response contains the expected 'notices' key
+    if 'notices' in results:
+        # Write data to CSV
+        with open(csv_file_path, mode='w', newline='', encoding='utf-8') as csv_file:
+            fieldnames = [
+                "buyer-name", 
+                "buyer-city",
+                "publication-number", 
+                "notice-title", 
+                "notice-type", 
+                "total-value",
+                "publication-date",
+                "winner-name",
+                "classification-cpv",
+                "notice-link"
+            ]
+            writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
+            
+            writer.writeheader()
+            for item in results['notices']:
+                buyer_name = clean_text(next(iter(item.get("buyer-name", {}).values()), ""))
+                buyer_city = clean_text(next(iter(item.get("buyer-city", {}).values()), ""))
+                notice_title = clean_text(item.get("notice-title", {}).get("eng", ""))
+                notice_type = clean_text(item.get("notice-type", ""))
+                publication_number = item.get("publication-number", "")
+                total_value = clean_text(item.get("total-value", ""))
+                publication_date = clean_text(item.get("publication-date", ""))
+                winner_name = clean_text(next(iter(item.get("winner-name", {}).values()), ""))
+                classification_cpv = clean_text(item.get("classification-cpv", ""))
+                notice_link = f"https://ted.europa.eu/en/notice/-/detail/{publication_number}"
+
+                writer.writerow({
+                    "buyer-name": buyer_name,
+                    "buyer-city": buyer_city,
+                    "publication-number": publication_number,
+                    "notice-title": notice_title,
+                    "notice-type": notice_type,
+                    "total-value": total_value,
+                    "publication-date": publication_date,
+                    "winner-name": winner_name,
+                    "classification-cpv": classification_cpv,
+                    "notice-link": notice_link
+                })
+       
+        print(f"Duomenys sėkmingai išsaugoti į {csv_file_path}")
+    else:
+        print("Atsakyme nėra laukiamo rakto 'notices'")
+else:
+    print(f"Ivyko klaida: {response.status_code}")
+    print(response.text)
