@@ -18,7 +18,7 @@ def clean_text(text):
 # API užklausos parametrai
 url = "https://api.ted.europa.eu/v3/notices/search"
 headers = {
-    "Authorization": "Bearer ffd5f11a8d4a44229a0f9d51baad72cd",
+    "Authorization": "key",
     "Content-Type": "application/json"
 }
 data = {
