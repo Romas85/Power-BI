@@ -3,20 +3,21 @@
 This Power BI model provides an in-depth analysis of the construction sector across Europe, utilizing data from Eurostat. It includes various visualizations to monitor key metrics such as labor costs, construction volumes, employment rates, and building permits.
 
 ## Model Structure
-## Data Source: Eurostat
+## Data Source: 
+Eurostat
 ## Visualizations:
-Top 5 Countries by Labor Costs: A bar chart showing the top 5 countries based on labor cost indices.
-Labor Force Dynamics: A line chart displaying the trend in labor costs and previous year's labor costs.
-Construction Permits Dynamics: A line chart showing the trend in construction permits issued over quarters.
-Country-wise Building Permits: A bar chart displaying the number of building permits issued by country.
-Interactive Map: A map highlighting EU and non-EU countries with the ability to filter individual countries.
-DAX Features Demonstrated:
-Calculation of labor cost indices.
-Comparison of current and previous year's labor costs.
-Aggregation and trend analysis of building permits.
-Power BI Features Demonstrated
-Slicer for filtering by time period and building permit type.
-Dynamic comparison of country metrics with EU averages.
+- ** Top 5 Countries by Labor Costs**: A bar chart showing the top 5 countries based on labor cost indices.
+- ** Labor Force Dynamics**: A line chart displaying the trend in labor costs and previous year's labor costs.
+- ** Construction Permits Dynamics: A line chart showing the trend in construction permits issued over quarters.
+- ** Country-wise Building Permits: A bar chart displaying the number of building permits issued by country.
+- ** Interactive Map: A map highlighting EU and non-EU countries with the ability to filter individual countries.
+## DAX Features Demonstrated:
+- ** Calculation of labor cost indices.
+- ** Comparison of current and previous year's labor costs.
+- ** Aggregation and trend analysis of building permits.
+## Power BI Features Demonstrated
+- ** Slicer for filtering by time period and building permit type.
+- ** Dynamic comparison of country metrics with EU averages.
 ![image](https://github.com/Romas85/Power-BI/assets/161317970/c8547d4b-a1da-4c61-a7c5-fdf6ed2625c7)
 
 
