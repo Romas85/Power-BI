@@ -19,7 +19,7 @@ Eurostat
 - **Slicer for filtering by time period and building permit type.**
 - **Dynamic comparison of country metrics with EU averages.**
 ![image](https://github.com/Romas85/Power-BI/assets/161317970/c8547d4b-a1da-4c61-a7c5-fdf6ed2625c7)
-<iframe title="Statistika" width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiMzI0NWFiZTQtN2E1Ny00ODFhLWEwZDItOTI2YzRjMDE1ZjIyIiwidCI6IjIxZTljZDU2LTc1NzAtNGI2Yi1hZDljLTFhMDEwYjg3NmIwMCIsImMiOjl9" frameborder="0" allowFullScreen="true"></iframe>
+![image](https://app.powerbi.com/view?r=eyJrIjoiMzI0NWFiZTQtN2E1Ny00ODFhLWEwZDItOTI2YzRjMDE1ZjIyIiwidCI6IjIxZTljZDU2LTc1NzAtNGI2Yi1hZDljLTFhMDEwYjg3NmIwMCIsImMiOjl9)
 
 ## Potential Tenders Search Model
 ## Description:
