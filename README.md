@@ -19,7 +19,7 @@ Eurostat
 - **Slicer for filtering by time period and building permit type.**
 - **Dynamic comparison of country metrics with EU averages.**
 ![image](https://github.com/Romas85/Power-BI/assets/161317970/c8547d4b-a1da-4c61-a7c5-fdf6ed2625c7)
-
+<iframe title="Statistika" width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiMzI0NWFiZTQtN2E1Ny00ODFhLWEwZDItOTI2YzRjMDE1ZjIyIiwidCI6IjIxZTljZDU2LTc1NzAtNGI2Yi1hZDljLTFhMDEwYjg3NmIwMCIsImMiOjl9" frameborder="0" allowFullScreen="true"></iframe>
 
 ## Potential Tenders Search Model
 ## Description:
@@ -34,7 +34,7 @@ This Power BI data model is designed to search for potential tenders in which a 
 - **Direct Links:** Provides direct links to the tender details for further information.
 - **Flexible Filtering Options:** Users can filter tenders by country, amount, type of services provided, and tender announcement period.
 
-##Benefits:
+## Benefits:
 
 This model provides a comprehensive tool for identifying and analyzing potential tender opportunities. By leveraging data from TED and visualizing it in Power BI, companies can strategically target tenders that match their capabilities and interests, enhancing their chances of successful participation.
 ![image](https://github.com/Romas85/Power-BI/assets/161317970/146555da-b1cc-45fb-8c31-5d4f519d3e66)
